@@ -2,10 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-root',
-  // template: `<p>Hello world!</p>`,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // styles: ['']
 })
 export class AppComponent {
   name = 'Adam';
@@ -16,6 +14,11 @@ export class AppComponent {
   }
 
   changeImage(e: KeyboardEvent) {
-    this.imgURL = e.target.value;
+    /** Type assertion */
+    this.imgURL = (e.target as HTMLInputElement).value;
+  }
+
+  public logImg(event: string) {
+    console.log(event);
   }
 }
