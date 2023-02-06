@@ -8,6 +8,11 @@ import { Component } from "@angular/core";
 export class AppComponent {
   name = 'adam hauze'
   imgURL = 'https://picsum.photos/id/237/500/500';
+  images = [
+    'https://picsum.photos/id/237/500/500',
+    'https://picsum.photos/id/237/500/500',
+    'https://picsum.photos/id/237/500/500'
+  ]
   currentDate = new Date();
   cost: number = 2000;
   temperature = 25.3;

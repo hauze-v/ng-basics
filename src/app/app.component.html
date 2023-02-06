@@ -1,3 +1,5 @@
+<p *ngIf="blueClass">I'm templated content and only show when the button is blue</p>
+
 <button (click)="blueClass = !blueClass"
 				[ngClass]="{ blue: blueClass }"
 				[ngStyle]="{ 'font-size.px': fontSize }">Change
@@ -9,8 +11,10 @@
 <input (keyup)="changeImage($event)" 
        [value]="imgURL">
 
-<app-post [postImg]="imgURL" (imgSelected)="logImg($event)">
-	<p>Some caption</p>
+<app-post *ngFor="let image of images; let i = index"
+					[postImg]="image" 
+					(imgSelected)="logImg($event)">
+	<p>Picture {{ i }}</p>
 </app-post>
 
 
